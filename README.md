@@ -8,8 +8,10 @@
 
 ## Mapa Mental 
 
+<img src"../assets/mapa-arq-hex.jpg">
 
 ## Referências
 Artigo "Hexagonal architecture" - https://alistair.cockburn.us/hexagonal-architecture/
+
 Artigo "Organizando seu projeto .NET com Arquitetura Hexagonal — Parte 02"- https://alexalvess.medium.com/organizando-seu-projeto-net-com-arquitetura-hexagonal-parte-02-fe9a8ed6ab02
 
