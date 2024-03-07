@@ -8,7 +8,7 @@
 
 ## Mapa Mental 
 
-<img src"../assets/mapa-arq-hex.jpg">
+<img src="../assets/mapa-arq-hex.jpg">
 
 ## Referências
 Artigo "Hexagonal architecture" - https://alistair.cockburn.us/hexagonal-architecture/
