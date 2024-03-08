@@ -10,6 +10,10 @@
 
 <img src="assets/mapa-arq-hex.jpg">
 
+## Caso de Estudo 1
+
+Vamos considerar um problema simples: A soma de dois números inteiros! Por outro lado, vamos adicionar 2 adaptadores "condutores", ou seja, duas formas diferentes de interagir com o domínio: via API e console.
+
 ## Referências
 Artigo "Hexagonal architecture" - https://alistair.cockburn.us/hexagonal-architecture/
 
