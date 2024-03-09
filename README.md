@@ -14,6 +14,8 @@
 
 Vamos considerar um problema simples: A soma de dois números inteiros! Por outro lado, vamos adicionar 2 "adaptadores condutores", ou seja, duas formas diferentes de interagir com o domínio: via API e console.
 
+#### Passo a passo:
+
 1) Criar entidades (Entity 1 e 2) contendo apenas uma propriedade;
 2) Criar a porta para lógica de negócios (interface IService) que os "adaptadores condutores" vão usar para acessar;
 3) Criar a classe concreta que implementa a lógica de negócios (Service);
