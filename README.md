@@ -12,7 +12,15 @@
 
 ## Caso de Estudo 1
 
-Vamos considerar um problema simples: A soma de dois números inteiros! Por outro lado, vamos adicionar 2 adaptadores "condutores", ou seja, duas formas diferentes de interagir com o domínio: via API e console.
+Vamos considerar um problema simples: A soma de dois números inteiros! Por outro lado, vamos adicionar 2 "adaptadores condutores", ou seja, duas formas diferentes de interagir com o domínio: via API e console.
+
+1) Criar entidades (Entity 1 e 2) contendo apenas uma propriedade;
+2) Criar a porta para lógica de negócios (interface IService) que os "adaptadores condutores" vão usar para acessar;
+3) Criar a classe concreta que implementa a lógica de negócios (Service);
+
+### Questionamentos deste estudo
+
+1) Ao usar a entidade na classe que implementa a lógica de negócios, devemos criar uma instância da entidade para ter acesso à sua propriedade. Está correto a implementação da lógica de negócios acessar as classes de entidade? Como usar a injeção e dependência para criar a instância da entidade?    
 
 ## Referências
 Artigo "Hexagonal architecture" - https://alistair.cockburn.us/hexagonal-architecture/
