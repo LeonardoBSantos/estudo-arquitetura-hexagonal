@@ -19,6 +19,15 @@ Vamos considerar um problema simples: A soma de dois números inteiros! Por outr
 1) Criar entidades (Entity 1 e 2) contendo apenas uma propriedade;
 2) Criar a porta para lógica de negócios (interface IService) que os "adaptadores condutores" vão usar para acessar;
 3) Criar a classe concreta que implementa a lógica de negócios (Service);
+4) Criar adaptadores e usar os serviços de negócios
+
+#### Hierarquia das dependências
+
+<img src="assets/hierarquia-dependencias">
+
+#### Analogia
+
+<img src="assets/analogia">
 
 ### Questionamentos deste estudo
 
