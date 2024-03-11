@@ -48,7 +48,21 @@ Adicionalmente usamos injeção de dependência para diminuir o acoplamento entr
 
 ### Questionamentos deste estudo
 
-1) Ao usar a entidade na classe que implementa a lógica de negócios, devemos criar uma instância da entidade para ter acesso à sua propriedade. Está correto a implementação da lógica de negócios acessar as classes de entidade? Como usar a injeção e dependência para criar a instância da entidade?    
+1) Ao usar a entidade na classe que implementa a lógica de negócios, devemos criar uma instância da entidade para ter acesso à sua propriedade. Está correto a implementação da lógica de negócios acessar as classes de entidade? Como usar a injeção e dependência para criar a instância da entidade?
+
+## Caso de estudo 2 - Adicionando novo adaptador acionador (BD in memory) e induzindo mudança no domínio
+
+Vamos começar induzindo uma mudança nas entidades de domínio, elas serão mescladas e existirá uma única entidade apenas. Dessa forma vamos nos atentar às mudanças causadas por essa modificação.
+
+Ao excluir a "Entity2" induzimos erro na aplication e como os adaptadores dependem do serviço de negócios acusam erro também. Então efetuamos uma modificação na regra de negócio que usa as propriedades da entidade que foi excluída (arquivo Service no projeto application), porém ao recompilar continuamos com erros na program
+
+<img src="assets/erros-caso2.png">
+
+Debuggando o projeto percebemos que usando o aplicativo de console é possível acessar a nova lógica de negócios e executar a operação normalmente, por tanto os erros estão no adaptador API.
+
+<img src="assets/erros-caso2-2.png">
+
+Para corrigir basta excluir a linha do using apontando para o domain e adicionar novamente. Portanto, concluimos que se trata de um erro operacional do Visual studio. Dessa forma, é possível observar que ao mudarmos algo no domínio devemos ajustar apenas a lógica de negócios, constatando o isolamento entre a implementação dos adapters e da lógica de negócios com o domínio. 
 
 ## Referências
 Artigo "Hexagonal architecture" - https://alistair.cockburn.us/hexagonal-architecture/
