@@ -23,11 +23,11 @@ Vamos considerar um problema simples: A soma de dois números inteiros! Por outr
 
 #### Hierarquia das dependências
 
-<img src="assets/hierarquia-dependencias">
+<img src="assets/hierarquia-dependencias.png">
 
 #### Analogia
 
-<img src="assets/analogia">
+<img src="assets/analogia.png">
 
 ### Questionamentos deste estudo
 
