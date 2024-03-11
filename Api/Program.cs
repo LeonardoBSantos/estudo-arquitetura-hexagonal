@@ -1,6 +1,13 @@
 using Application.services;
+using Domain.entities.IServices;
 
 var builder = WebApplication.CreateBuilder(args);
+
+var serviceProvider = new ServiceCollection()
+            .AddSingleton<IService, Service>()
+            .BuildServiceProvider();
+
+var service = serviceProvider.GetService<IService>();
 
 // Add services to the container.
 
@@ -12,7 +19,6 @@ app.UseHttpsRedirection();
 
 app.MapGet("/sumInts", () =>
 {
-    var service = new Service();
     var sum = service.SumInts();
 
     return sum;
