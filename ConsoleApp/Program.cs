@@ -1,5 +1,12 @@
 ﻿using Application.services;
+using Domain.entities.IServices;
+using Microsoft.Extensions.DependencyInjection;
 
-var service = new Service();
+var serviceProvider = new ServiceCollection()
+            .AddSingleton<IService, Service>()
+            .BuildServiceProvider();
+
+var service = serviceProvider.GetService<IService>();
+
 var sum = service.SumInts();
-Console.WriteLine($"Esta é a soma de {service.entity1.IntA} com {service.entity2.IntB} = {sum.ToString()}");
+Console.WriteLine($"Esta é a soma de dois inteiros = {sum.ToString()}");
