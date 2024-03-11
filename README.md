@@ -19,7 +19,7 @@ Vamos considerar um problema simples: A soma de dois números inteiros! Por outr
 1) Criar entidades (Entity 1 e 2) contendo apenas uma propriedade;
 2) Criar a porta para lógica de negócios (interface IService) que os "adaptadores condutores" vão usar para acessar;
 3) Criar a classe concreta que implementa a lógica de negócios (Service);
-4) Criar adaptadores e usar os serviços de negócios
+4) Criar adaptadores e usar os serviços de negócios;
 
 #### Hierarquia das dependências
 
@@ -28,6 +28,23 @@ Vamos considerar um problema simples: A soma de dois números inteiros! Por outr
 #### Analogia
 
 <img src="assets/analogia.png">
+
+#### Uso de injeção de dependência nos adaptadores
+Adicionalmente usamos injeção de dependência para diminuir o acoplamento entre os adaptadores e o serviço que implementa a lógica de negócios. Para usar seguimos esse passo a passo:
+
+1) Instalar a dependência Microsoft.Extensions.DependencyInjection nos adaptadores;
+2) Configurar os serviços:
+
+```
+  var serviceProvider = new ServiceCollection()
+            .AddTransient<IServicoExemplo, ServicoExemplo>()
+            .BuildServiceProvider();
+```
+3) Obter instância do serviço:
+
+```
+  var servico = serviceProvider.GetService<IServicoExemplo>();
+```
 
 ### Questionamentos deste estudo
 
