@@ -64,6 +64,10 @@ Debuggando o projeto percebemos que usando o aplicativo de console é possível 
 
 Para corrigir basta excluir a linha do using apontando para o domain e adicionar novamente. Portanto, concluimos que se trata de um erro operacional do Visual studio. Dessa forma, é possível observar que ao mudarmos algo no domínio devemos ajustar apenas a lógica de negócios, constatando o isolamento entre a implementação dos adapters e da lógica de negócios com o domínio. 
 
+Para adicionar o bd in memory siga esse passo a passo:
+1) Adiconar a dependência Microsoft.EntityFrameworkCore.SqlServer
+2) 
+
 ## Referências
 Artigo "Hexagonal architecture" - https://alistair.cockburn.us/hexagonal-architecture/
 
