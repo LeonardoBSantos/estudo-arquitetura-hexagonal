@@ -1,5 +1,8 @@
 ﻿using Domain.entities;
 using Domain.entities.IServices;
+using Domain.iAdapters;
+using InMemoryDb.repositories;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,21 +13,21 @@ namespace Application.services
 {
     public class Service : IService
     {
-        public Entity1 entity1 { get; set; }
-        public Entity2 entity2 { get; set; }
+        public IRepository repository { get; set; }
 
         public Service()
         {
-             this.entity1 = new Entity1();
-             this.entity2 = new Entity2();
+            this.repository = new Repository();
         }
 
         public int SumInts()
         {
-            entity1.IntA = 2;
-            entity2.IntB = 2;
+            var sum = 0;
+            repository.CreateData();
+            var listInts = repository.GetData();
+            sum = listInts.IntA + listInts.IntB;
 
-            return entity1.IntA + entity2.IntB;
+            return sum;
         }
     }
 }
