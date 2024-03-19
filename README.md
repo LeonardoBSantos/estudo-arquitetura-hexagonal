@@ -60,7 +60,7 @@ Ao excluir a "Entity2" induzimos erro na aplication e como os adaptadores depend
 
 Debuggando o projeto percebemos que usando o aplicativo de console é possível acessar a nova lógica de negócios e executar a operação normalmente, por tanto os erros estão no adaptador API.
 
-<img src="assets/erros-caso2-2.png">
+<img src="assets/erro-caso2-2.png">
 
 Para corrigir basta excluir a linha do using apontando para o domain e adicionar novamente. Portanto, concluimos que se trata de um erro operacional do Visual studio. Dessa forma, é possível observar que ao mudarmos algo no domínio devemos ajustar apenas a lógica de negócios, constatando o isolamento entre a implementação dos adapters e da lógica de negócios com o domínio. 
 
