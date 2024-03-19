@@ -88,6 +88,14 @@ Para adicionar o bd in memory siga esse passo a passo:
 ````
 4) Criar o repositório contendo as operações de leitura e escrita através da classe ApplicationDbContext;
 
+#### Hierarquia das dependências
+
+<img src="assets/hierarquia-dependencias2.png">
+
+#### Analogia
+
+<img src="assets/analogia2.png">
+
 ## Referências
 Artigo "Hexagonal architecture" - https://alistair.cockburn.us/hexagonal-architecture/
 
