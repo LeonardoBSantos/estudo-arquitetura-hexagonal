@@ -65,11 +65,33 @@ Debuggando o projeto percebemos que usando o aplicativo de console é possível 
 Para corrigir basta excluir a linha do using apontando para o domain e adicionar novamente. Portanto, concluimos que se trata de um erro operacional do Visual studio. Dessa forma, é possível observar que ao mudarmos algo no domínio devemos ajustar apenas a lógica de negócios, constatando o isolamento entre a implementação dos adapters e da lógica de negócios com o domínio. 
 
 Para adicionar o bd in memory siga esse passo a passo:
-1) Adiconar a dependência Microsoft.EntityFrameworkCore.SqlServer
-2) 
+1) Adicionar a dependência Microsoft.EntityFrameworkCore.InMemory;
+2) Criar a classe de contexto:
+
+```
+  public class ApplicationDbContext : DbContext
+    {
+        public DbSet<Entity1> Entity1 { get; set; }
+  
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseInMemoryDatabase(databaseName: "SumNumsAb");
+        }
+
+    }
+```
+3) Adicionar uma anotação indicando o Id da tabela:
+
+````
+  [Key]
+  public string IdExemplo { get; set; }****
+````
+4) Criar o repositório contendo as operações de leitura e escrita através da classe ApplicationDbContext;
 
 ## Referências
 Artigo "Hexagonal architecture" - https://alistair.cockburn.us/hexagonal-architecture/
 
 Artigo "Organizando seu projeto .NET com Arquitetura Hexagonal — Parte 02"- https://alexalvess.medium.com/organizando-seu-projeto-net-com-arquitetura-hexagonal-parte-02-fe9a8ed6ab02
+
+Vídeo "Implement Entity Framework Core In-Memory Database with ASP .NET Core 6.0" - https://www.youtube.com/watch?v=5Jokinm6iuI
 
